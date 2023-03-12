@@ -1,5 +1,6 @@
 import Sauce_HomePage_PO from "../support/pageObjects/SauceDemo/Sauce_HomePage_PO";
 import Sauce_InventoryPage_PO from "../support/pageObjects/SauceDemo/Sauce_InventoryPage_PO";
+import Sauce_ProductPage_PO from "./pageObjects/SauceDemo/Sauce_ProductPage_PO";
 
 // ***********************************************
 // This example commands.js shows you how to
@@ -13,6 +14,7 @@ import Sauce_InventoryPage_PO from "../support/pageObjects/SauceDemo/Sauce_Inven
 require('cypress-xpath');
 const sauceHomePage = new Sauce_HomePage_PO();
 const sauceInventoryPage = new Sauce_InventoryPage_PO();
+const sauceProductPage = new Sauce_ProductPage_PO;
 
 Cypress.Commands.add('addProductToBasket', product_name => {
     cy.get("div.fixed_wrapper .fixed a").each(($el, index, $list) =>{
@@ -30,6 +32,20 @@ Cypress.Commands.add('loginToApplication', (username, password) => {
     sauceHomePage.elements.txtPassword().type(globalThis.data.password);
     sauceHomePage.elements.btnLogin().click();
 });
+
+Cypress.Commands.add('addSauceLabProductToCart', product_name => {
+    sauceInventoryPage.elements.lnkProducts().each(($el, index, $list)=>{
+        const text = $el.text();
+        cy.log(text);
+        if(text.includes(product_name))
+        {
+            cy.wrap($el).click();
+            sauceProductPage.elements.btnAddToCart().click();
+            sauceProductPage.elements.txtaddToCart().should('be.visible').and('have.text',1).click();
+        }
+    });
+});
+
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
