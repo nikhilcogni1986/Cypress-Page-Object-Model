@@ -8,12 +8,14 @@ module.exports = defineConfig({
     env: {
       url: "https://rahulshettyacademy.com",
       teststore_url: "https://automationteststore.com/",
-      webdriveruni_url: "http://www.webdriveruniversity.com"
+      webdriveruni_url: "http://www.webdriveruniversity.com",
+      sauceDemo_url: "https://www.saucedemo.com/"
     },
     specPattern: 'cypress/e2e/**/*.js',
     excludeSpecPattern: ['**/1-getting-started/*','**/2-advanced-examples/*'],
-    pageLoadTimeout: 60000,
-    defaultCommandTimeout: 15000,
+    pageLoadTimeout: 10000,
+    defaultCommandTimeout: 10000,
+    experimentalSourceRewriting:true,
     screenshotOnRunFailure: true,
     video: false,
     trashAssetsBeforeRuns: true,
