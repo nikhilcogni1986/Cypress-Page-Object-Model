@@ -1,5 +1,5 @@
-import AutoStore_HairCare_PO from "../support/pageObjects/Automation-test-store/AutoStore_HairCare_PO";
-import AutoStore_HomePage_PO from "../support/pageObjects/Automation-test-store/Autostore_HomePage_PO";
+import AutoStore_HairCare_PO from "../../support/pageObjects/Automation-test-store/AutoStore_HairCare_PO";
+import AutoStore_HomePage_PO from "../../support/pageObjects/Automation-test-store/Autostore_HomePage_PO";
 
 describe('Addition of products to the cart', ()=>{
 

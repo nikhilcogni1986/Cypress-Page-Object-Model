@@ -1,6 +1,6 @@
 ///<reference types = "cypress"/>
-import Contact_Us_PO from "../support/pageObjects/webdriver-uni/Contact-Us_PO";
-import HomePage_PO from "../support/pageObjects/webdriver-uni/HomePage_PO";
+import Contact_Us_PO from "../../support/pageObjects/webdriver-uni/Contact-Us_PO";
+import HomePage_PO from "../../support/pageObjects/webdriver-uni/HomePage_PO";
 
 describe('Contact Us Page', function(){
 

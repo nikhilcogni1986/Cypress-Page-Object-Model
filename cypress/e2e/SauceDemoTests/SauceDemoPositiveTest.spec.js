@@ -1,11 +1,11 @@
 ///<reference types = "cypress"/>
-import Sauce_HomePage_PO from "../support/pageObjects/SauceDemo/Sauce_HomePage_PO";
-import Sauce_InventoryPage_PO from "../support/pageObjects/SauceDemo/Sauce_InventoryPage_PO";
+import Sauce_HomePage_PO from "../../support/pageObjects/SauceDemo/Sauce_HomePage_PO";
+import Sauce_InventoryPage_PO from "../../support/pageObjects/SauceDemo/Sauce_InventoryPage_PO";
 
 describe('Contact Us Page', function(){
 
     before(()=>{
-        cy.fixture("login.json").then(function(data){
+        cy.fixture("SauceUsers.json").then(function(data){
             globalThis.data = data;
         });
     });
